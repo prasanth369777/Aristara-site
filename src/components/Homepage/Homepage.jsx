@@ -1,15 +1,15 @@
 import React from "react";
 
 // Homepage Components
-import HERO from "./Hero";
-import Residentialconstruction from "./Rc";
-import About from "./Aboutus";
-import Interiordesign from "./Interiordesign";
-import Jointventure from "./Jointventure";
-import Blog1 from "./Blog1";
-import Projects from "./Projects";
-import Ourprocess from "./Ourprocess";
-import Contactus from "./Contact";
+import HERO from "../Homepage/Hero";
+import Residentialconstruction from "../Homepage/Rc";
+import About from "../Homepage/Aboutus";
+import Interiordesign from "../Homepage/Interiordesign";
+import Jointventure from "../Homepage/Jointventure";
+import Blog1 from "../Homepage/Blog1";
+import Projects from "../Homepage/Projects";
+import Ourprocess from "../Homepage/Ourprocess";
+import Contactus from "../Homepage/Contact";
 
 const Home = () => {
   return (
