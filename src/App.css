@@ -1,29 +1,49 @@
-/* ==========================================
-   Lenis Smooth Scrolling Optimized CSS
-   ========================================== */
-html.lenis, html.lenis body {
-  height: auto;
-  overscroll-behavior: none;
+
+/* ========================================
+   ARISTARA — GLOBAL STYLES
+======================================== */
+
+html {
+  background-color: #fbf8f1;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #fbf8f1;
+  color: #29261f;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+#root {
+  min-height: 100vh;
+  background-color: #fbf8f1;
 }
 
-.lenis.lenis-stopped {
-  overflow: hidden;
+/* Prevent accidental horizontal overflow */
+* {
+  box-sizing: border-box;
 }
 
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
+img {
+  max-width: 100%;
 }
 
-/* GPU Acceleration Fix for Lenis Scroll Container */
-.lenis-smooth {
-  transform: translate3d(0, 0, 0);
-  will-change: scroll-position;
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

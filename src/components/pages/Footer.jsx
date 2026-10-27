@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -6,6 +7,7 @@ import {
   Armchair,
   Paintbrush,
   Layers3,
+  Handshake,
   ArrowUpRight,
   MapPin,
   Phone,
@@ -14,6 +16,8 @@ import {
   Send,
   ChevronUp,
 } from "lucide-react";
+
+import logo from "../../assests/logoa.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,20 +29,19 @@ export default function Footer() {
     { name: "About Us", href: "/about" },
     { name: "Our Services", href: "/#services" },
     { name: "Our Projects", href: "/#portfolio" },
-    { name: "Client Reviews", href: "/#testimonials" },
-    { name: "FAQs", href: "/#faq" },
+    { name: "Blog & Insights", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   const services = [
     {
-      name: "Interior Design",
-      icon: Armchair,
+      name: "Residential Construction",
+      icon: House,
       href: "/#services",
     },
     {
-      name: "Residential Construction",
-      icon: House,
+      name: "Interior Design",
+      icon: Armchair,
       href: "/#services",
     },
     {
@@ -56,6 +59,11 @@ export default function Footer() {
       icon: Layers3,
       href: "/#services",
     },
+    {
+      name: "Joint Venture Projects",
+      icon: Handshake,
+      href: "/contact",
+    },
   ];
 
   const handleSubscribe = (event) => {
@@ -67,13 +75,17 @@ export default function Footer() {
     }
 
     setMessage(
-      "Thank you for your interest! Newsletter registration is not connected yet."
+      "Thank you for your interest! Newsletter subscriptions are not connected yet."
     );
   };
 
   const scrollToTop = (event) => {
     event.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -81,14 +93,12 @@ export default function Footer() {
       id="footer"
       className="w-full overflow-hidden bg-[#fbf8f1] font-['Poppins',sans-serif] text-[#29261f]"
     >
-      {/* MAIN FOOTER */}
-      <div className="mx-auto max-w-[1600px] px-4 pb-4 pt-5 sm:px-6 sm:pt-6 lg:px-10 lg:pt-7 xl:px-14">
-        <div className="grid grid-cols-1 overflow-hidden border border-[#e8dfd2] bg-white lg:grid-cols-[0.85fr_1.65fr]">
-
+      <div className="mx-auto max-w-[1600px] px-4 pb-4 pt-6 sm:px-6 sm:pt-8 lg:px-10 lg:pt-10 xl:px-14">
+        {/* MAIN FOOTER */}
+        <div className="grid grid-cols-1 overflow-hidden border border-[#e8dfd2] bg-white lg:grid-cols-[0.9fr_1.7fr]">
           {/* BRAND PANEL */}
-          <div className="relative flex flex-col justify-between overflow-hidden bg-[#29261f] p-5 text-white sm:p-7 lg:p-8">
-
-            {/* Decorative circles */}
+          <div className="relative flex flex-col justify-between overflow-hidden bg-[#fdfdfb] p-5 text-black sm:p-7 lg:p-9">
+            {/* Decorative elements */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full border border-white/[0.09] sm:h-64 sm:w-64"
@@ -105,56 +115,48 @@ export default function Footer() {
             />
 
             <div className="relative z-10">
-
-              {/* BRAND LOGO */}
+              {/* IMPORTED BRAND LOGO */}
               <Link
                 to="/"
-                aria-label="Aristara Interior home"
-                className="group inline-flex items-center gap-3"
+                aria-label="Aristara Construction home"
+                className="inline-flex max-w-full items-center"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#eab934]/50 bg-white/5 text-[#eab934] transition-colors group-hover:bg-white/10 sm:h-11 sm:w-11">
-                  <House size={24} strokeWidth={1.5} />
-                </span>
-
-                <span>
-                  <span className="block text-lg font-semibold tracking-[-0.04em] text-white sm:text-xl">
-                    ARISTARA
-                    <span className="text-[#eab934]">.</span>
-                  </span>
-
-                  <span className="mt-0.5 block text-[8px] font-medium uppercase tracking-[0.2em] text-white/55">
-                    Interior & Construction
-                  </span>
-                </span>
+                <img
+                  src={logo}
+                  alt="Aristara Construction"
+                  className="h-12 w-auto max-w-[230px] object-contain object-left sm:h-14 lg:h-16"
+                  loading="eager"
+                  decoding="async"
+                />
               </Link>
 
-              {/* BRAND MESSAGE */}
-              <div className="mt-8 max-w-[430px] sm:mt-10 lg:mt-12">
-                <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#eab934] sm:text-[10px]">
+              {/* BRAND CONTENT */}
+              <div className="mt-8 max-w-[440px] sm:mt-10 lg:mt-12">
+                <p className="mb-3 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#eab934] sm:text-[10px]">
+                  <span className="h-px w-7 bg-[#eab934]" />
                   Design · Build · Transform
                 </p>
 
-                <h2 className="text-[clamp(1.9rem,3.2vw,3rem)] font-semibold leading-[1.13] tracking-[-0.055em] text-white">
-                  Your Vision.
-                  <br />
-                  Our Craft.
+                <h2 className="text-[clamp(1.9rem,3.2vw,3rem)] font-semibold leading-[1.13] tracking-[-0.055em] text-black">
+                  Building Dreams.
                   <br />
                   <span className="text-[#eab934]">
-                    Your Space.
+                    Designing Life.
                   </span>
                 </h2>
 
-                <p className="mt-3 max-w-[360px] text-[11px] leading-6 text-white/65 sm:text-xs">
-                  From thoughtfully designed interiors to construction
-                  and finishing, Aristara Interior transforms your ideas
-                  into beautiful, functional spaces.
+                <p className="mt-4 max-w-[370px] text-[11px] leading-6 text-black/65 sm:text-xs sm:leading-7">
+                  From thoughtfully planned homes to elegant interiors
+                  and functional commercial spaces, we bring your
+                  vision to life through considered design and
+                  quality-focused execution.
                 </p>
 
                 <Link
                   to="/contact"
-                  className="group mt-5 inline-flex min-h-10 items-center gap-3 bg-[#eab934] px-5 py-2.5 text-[10px] font-semibold text-[#29261f] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3ca55] sm:text-[11px]"
+                  className="group mt-6 inline-flex min-h-11 items-center gap-3 bg-[#eab934] px-5 py-3 text-[10px] font-semibold text-[#29261f] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3ca55] sm:text-[11px]"
                 >
-                  Start Your Project
+                  Discuss Your Project
 
                   <ArrowUpRight
                     size={15}
@@ -165,9 +167,9 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* BOTTOM BRAND STATEMENT — NO SOCIAL LINKS */}
-            <div className="relative z-10 mt-7 border-t border-white/15 pt-4">
-              <p className="text-[9px] font-medium uppercase tracking-[0.14em] text-white/50">
+            {/* BRAND STATEMENT */}
+            <div className="relative z-10 mt-8 border-t border-white/15 pt-4">
+              <p className="text-[9px] font-medium uppercase tracking-[0.14em] text-black/50 sm:text-[10px]">
                 Thoughtfully Designed.
                 <span className="text-[#eab934]"> </span>
                 Beautifully Built.
@@ -175,22 +177,20 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RIGHT INFORMATION PANEL */}
-          <div className="flex min-w-0 flex-col justify-between p-4 sm:p-6 lg:p-7">
-
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-7 xl:grid-cols-3 xl:gap-x-6">
-
+          {/* INFORMATION PANEL */}
+          <div className="flex min-w-0 flex-col justify-between p-5 sm:p-7 lg:p-8">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 xl:grid-cols-3 xl:gap-x-6">
               {/* QUICK LINKS */}
               <div className="min-w-0">
                 <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#9b7626] sm:text-[10px]">
-                  Explore
+                  Discover
                 </p>
 
-                <h3 className="mb-4 text-lg font-semibold tracking-[-0.04em] text-[#29261f] sm:text-xl">
+                <h3 className="mb-5 text-lg font-semibold tracking-[-0.04em] text-[#29261f] sm:text-xl">
                   Quick Links
                 </h3>
 
-                <ul className="space-y-2.5">
+                <ul className="space-y-3">
                   {quickLinks.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -212,11 +212,11 @@ export default function Footer() {
               {/* SERVICES */}
               <div className="min-w-0">
                 <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#9b7626] sm:text-[10px]">
-                  What We Do
+                  Our Expertise
                 </p>
 
-                <h3 className="mb-4 text-lg font-semibold tracking-[-0.04em] text-[#29261f] sm:text-xl">
-                  Our Services
+                <h3 className="mb-5 text-lg font-semibold tracking-[-0.04em] text-[#29261f] sm:text-xl">
+                  What We Do
                 </h3>
 
                 <ul className="space-y-3">
@@ -249,12 +249,11 @@ export default function Footer() {
                   Get In Touch
                 </p>
 
-                <h3 className="mb-4 text-lg font-semibold tracking-[-0.04em] text-[#29261f] sm:text-xl">
-                  Let's Connect.
+                <h3 className="mb-5 text-lg font-semibold tracking-[-0.04em] text-[#29261f] sm:text-xl">
+                  Let&apos;s Connect.
                 </h3>
 
-                <div className="space-y-3.5">
-
+                <div className="space-y-4">
                   {/* LOCATION */}
                   <div className="flex items-start gap-2.5">
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-[#f5f0e6] text-[#9b7626]">
@@ -263,56 +262,54 @@ export default function Footer() {
 
                     <div>
                       <p className="text-[10px] font-semibold text-[#39342b] sm:text-[11px]">
-                        Visit Our Studio
+                        Our Location
                       </p>
 
-                      <p className="mt-0.5 text-[10px] leading-5 text-[#81786b]">
+                      <p className="mt-1 text-[10px] leading-5 text-[#81786b] sm:text-[11px]">
                         Coimbatore, Tamil Nadu, India
                       </p>
                     </div>
                   </div>
 
-                  {/* PHONE / WHATSAPP */}
-                  <a
-                    href="https://wa.me/919876543210"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-start gap-2.5"
-                  >
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-[#f5f0e6] text-[#9b7626] transition-colors group-hover:bg-[#eab934] group-hover:text-[#29261f]">
+                  {/* PHONE */}
+                  <div className="flex items-start gap-2.5">
+                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-[#f5f0e6] text-[#9b7626]">
                       <Phone size={15} strokeWidth={1.6} />
                     </span>
 
-                    <span className="min-w-0">
-                      <span className="block text-[10px] font-semibold text-[#39342b] sm:text-[11px]">
-                        Talk To Our Team
-                      </span>
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold text-[#39342b] sm:text-[11px]">
+                        Speak With Our Team
+                      </p>
 
-                      <span className="mt-0.5 block text-[10px] leading-5 text-[#81786b] transition-colors group-hover:text-[#9b7626]">
-                        WhatsApp Enquiries
-                      </span>
-                    </span>
-                  </a>
+                      <Link
+                        to="/contact"
+                        className="mt-1 inline-block text-[10px] leading-5 text-[#81786b] transition-colors hover:text-[#9b7626] sm:text-[11px]"
+                      >
+                        Contact for enquiries
+                      </Link>
+                    </div>
+                  </div>
 
                   {/* EMAIL / CONTACT PAGE */}
-                  <Link
-                    to="/contact"
-                    className="group flex items-start gap-2.5"
-                  >
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-[#f5f0e6] text-[#9b7626] transition-colors group-hover:bg-[#eab934] group-hover:text-[#29261f]">
+                  <div className="flex items-start gap-2.5">
+                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-[#f5f0e6] text-[#9b7626]">
                       <Mail size={15} strokeWidth={1.6} />
                     </span>
 
-                    <span className="min-w-0">
-                      <span className="block text-[10px] font-semibold text-[#39342b] sm:text-[11px]">
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold text-[#39342b] sm:text-[11px]">
                         Project Enquiries
-                      </span>
+                      </p>
 
-                      <span className="mt-0.5 block text-[10px] leading-5 text-[#81786b] transition-colors group-hover:text-[#9b7626]">
-                        Contact Form
-                      </span>
-                    </span>
-                  </Link>
+                      <Link
+                        to="/contact"
+                        className="mt-1 inline-block text-[10px] leading-5 text-[#81786b] transition-colors hover:text-[#9b7626] sm:text-[11px]"
+                      >
+                        Tell us about your project
+                      </Link>
+                    </div>
+                  </div>
 
                   {/* WORKING HOURS */}
                   <div className="flex items-start gap-2.5">
@@ -325,7 +322,7 @@ export default function Footer() {
                         Working Hours
                       </p>
 
-                      <p className="mt-0.5 text-[10px] leading-5 text-[#81786b]">
+                      <p className="mt-1 text-[10px] leading-5 text-[#81786b] sm:text-[11px]">
                         Monday – Saturday
                       </p>
                     </div>
@@ -334,22 +331,21 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* COMPACT NEWSLETTER */}
-            <div className="mt-6 border border-[#e8dfd2] bg-[#fbf8f1] p-4 sm:mt-8 sm:p-5 lg:mt-9">
-              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
-
-                <div className="max-w-[380px]">
+            {/* NEWSLETTER */}
+            <div className="mt-8 border border-[#e8dfd2] bg-[#fbf8f1] p-4 sm:p-5 lg:mt-10">
+              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-6">
+                <div className="max-w-[390px]">
                   <p className="mb-1.5 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#9b7626] sm:text-[10px]">
-                    Ideas & Inspiration
+                    Design Inspiration
                   </p>
 
                   <h3 className="text-sm font-semibold leading-snug tracking-[-0.035em] text-[#29261f] sm:text-base">
-                    Good Spaces Start With Good Ideas.
+                    Ideas That Shape Better Spaces.
                   </h3>
 
-                  <p className="mt-1.5 text-[10px] leading-5 text-[#81786b]">
-                    Get interior inspiration and project updates from
-                    Aristara Interior.
+                  <p className="mt-2 text-[10px] leading-5 text-[#81786b]">
+                    Discover design inspiration, construction insights
+                    and ideas for your next project.
                   </p>
                 </div>
 
@@ -359,7 +355,7 @@ export default function Footer() {
                 >
                   <label
                     htmlFor="footer-email"
-                    className="mb-1.5 block text-[10px] font-medium text-[#625b4f]"
+                    className="mb-2 block text-[10px] font-medium text-[#625b4f]"
                   >
                     Your Email Address
                   </label>
@@ -403,13 +399,13 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="flex w-full flex-col items-start justify-between gap-2.5 border-b border-[#e6ddcf] py-3.5 sm:flex-row sm:items-center sm:gap-5">
+        <div className="flex w-full flex-col items-start justify-between gap-2.5 border-b border-[#e6ddcf] py-4 sm:flex-row sm:items-center sm:gap-5">
           <p className="text-[9px] leading-5 text-[#81786b] sm:text-[10px]">
-            © {currentYear} Aristara Interior. All rights reserved.
+            © {currentYear} Aristara Construction. All rights reserved.
           </p>
 
           <p className="text-[9px] leading-5 text-[#81786b] sm:text-[10px]">
-            Thoughtfully Designed. Beautifully Built.
+            Design. Build. Transform.
           </p>
 
           <a

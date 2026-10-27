@@ -1,50 +1,69 @@
+
 import React, { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when the page is scrolled down 300px
-  const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  // Smooth scroll to the top
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
+    let ticking = false;
 
-    // Check initial scroll position
-    toggleVisibility();
+    const updateVisibility = () => {
+      if (ticking) return;
+
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        setIsVisible(window.scrollY > 300);
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", updateVisibility, {
+      passive: true,
+    });
+
+    updateVisibility();
 
     return () => {
-      window.removeEventListener("scroll", toggleVisibility);
+      window.removeEventListener("scroll", updateVisibility);
     };
   }, []);
 
+  const scrollToTop = () => {
+    // Use Lenis if it has been exposed globally.
+    if (window.lenis && typeof window.lenis.scrollTo === "function") {
+      window.lenis.scrollTo(0, {
+        duration: 1.1,
+      });
+      return;
+    }
+
+    // Fallback when Lenis is not available.
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+        .matches
+        ? "instant"
+        : "smooth",
+    });
+  };
+
   return (
-    <>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          aria-label="Scroll to top"
-          title="Scroll to top"
-          className="fixed bottom-6 left-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-black text-white shadow-lg transition-all duration-300 hover:bg-gray-800 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        >
-          <ArrowUp size={22} strokeWidth={2.5} />
-        </button>
-      )}
-    </>
+    <button
+      type="button"
+      onClick={scrollToTop}
+      aria-label="Scroll to top"
+      title="Scroll to top"
+      className={`fixed bottom-5 left-5 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#29261f] text-white shadow-lg transition-[opacity,transform,background-color] duration-300 hover:bg-[#a17b27] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#eab934] focus-visible:ring-offset-2 sm:bottom-6 sm:left-6 sm:h-12 sm:w-12 ${
+        isVisible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none translate-y-3 opacity-0"
+      }`}
+      tabIndex={isVisible ? 0 : -1}
+    >
+      <ArrowUp size={20} strokeWidth={2} />
+    </button>
   );
 };
 

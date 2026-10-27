@@ -1,34 +1,51 @@
-import React from 'react';
 
-import Hero from '../Homepage/Hero';
-import Services from '../Homepage/Services';
-import About from '../Homepage/About';
-import Work from '../Homepage/Work';
-import Process from '../Homepage/Process';
-// import Gallery from '../Homepage/gallery';
-// import Blogsec from '../Homepage/Blog1';
-import FAQ from '../Homepage/FAQ';
-import Testimonials from '../Homepage/Testimonials';
-import Contact from '../Homepage/Contact';
-import Infinityscroll from '../Homepage/infinityscrolling';
+import React from "react";
 
+import HERO from "../Homepage/Hero";
+import RESIDENTIALCONSTRUCTION from "./RESIDENTIALCONSTRUCTION";
+import ABOUT from "./ABOUT";
+import INTERIORDESIGN from "./INTERIORDESIGN ";
+import JOINTVENTURE from "./JOINTVENTURE";
+import BLOG1 from "./BLOG1";
+import PROJECTS from "../Homepage/PROJECTS";
+import OURPROCESS from "./OURPROCESS ";
+import CONTACTUS from "../Homepage/Contact";
+
+// Uncomment if you want to display the services marquee
+// import Infinityscroll from "../Homepage/infinityscrolling";
 
 export default function Home() {
   return (
-    <div className="bg-slate-900 text-white">
-     
-      <Hero />
-      <Infinityscroll />
-      <Services />
-      {/* <Gallery /> */}
-      <About />
-      <Work />
-      <Process />
-      {/* <Blogsec /> */}
-      <FAQ />
-      <Testimonials />
-      <Contact />
-    
-    </div>
+    <main className="min-h-screen w-full overflow-x-clip bg-[#fbf8f1] text-[#29261f]">
+      {/* Hero */}
+      <HERO />
+
+      {/* Services marquee */}
+      {/* <Infinityscroll /> */}
+
+      {/* About */}
+      <ABOUT />
+
+      {/* Residential construction */}
+      <RESIDENTIALCONSTRUCTION />
+
+      {/* Interior design */}
+      <INTERIORDESIGN />
+
+      {/* Joint venture */}
+      <JOINTVENTURE />
+
+      {/* Projects */}
+      <PROJECTS />
+
+      {/* Our process */}
+      <OURPROCESS />
+
+      {/* Blog */}
+      <BLOG1 />
+
+      {/* Contact */}
+      <CONTACTUS />
+    </main>
   );
 }
