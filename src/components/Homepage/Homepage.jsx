@@ -6,8 +6,8 @@ import About from "./Aboutus";
 import Interiordesign from "./Interiordesign";
 import Jointventure from "./Jventure";
 import Blog1 from "./Blog1";
-import Projects from "./Projects";
-import Ourprocess from "./Ourprocess";
+import Project from "./Project";
+import Process from "./Process";
 import Contactus from "./Contact";
 
 const Home = () => {
@@ -30,10 +30,10 @@ const Home = () => {
       <Jointventure />
 
       {/* Projects */}
-      <Projects />
+      <Project />
 
       {/* Our Process */}
-      <Ourprocess />
+      <Process />
 
       {/* Blog Section */}
       <Blog1 />
