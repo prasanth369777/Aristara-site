@@ -1,7 +1,7 @@
-
 import React from "react";
 
-import HERO from "../Homepage/Hero";
+// Homepage Components
+import HERO from "./Hero";
 import Residentialconstruction from "./Rc";
 import About from "./Aboutus";
 import Interiordesign from "./Interiordesign";
@@ -9,43 +9,41 @@ import Jointventure from "./Jointventure";
 import Blog1 from "./Blog1";
 import Projects from "./Projects";
 import Ourprocess from "./Ourprocess";
-import Contactus from "../Homepage/Contact";
+import Contactus from "./Contact";
 
-// Uncomment if you want to display the services marquee
-// import Infinityscroll from "../Homepage/infinityscrolling";
-
-export default function Home() {
+const Home = () => {
   return (
     <main className="min-h-screen w-full overflow-x-clip bg-[#fbf8f1] text-[#29261f]">
-      {/* Hero */}
+
+      {/* Hero Section */}
       <HERO />
 
-      {/* Services marquee */}
-      {/* <Infinityscroll /> */}
-
-      {/* About */}
+      {/* About Section */}
       <About />
 
-      {/* Residential construction */}
+      {/* Residential Construction */}
       <Residentialconstruction />
 
-      {/* Interior design */}
+      {/* Interior Design */}
       <Interiordesign />
 
-      {/* Joint venture */}
+      {/* Joint Venture */}
       <Jointventure />
 
       {/* Projects */}
       <Projects />
 
-      {/* Our process */}
+      {/* Our Process */}
       <Ourprocess />
 
-      {/* Blog */}
+      {/* Blog Section */}
       <Blog1 />
 
-      {/* Contact */}
+      {/* Contact Section */}
       <Contactus />
+
     </main>
   );
-}
+};
+
+export default Home;
