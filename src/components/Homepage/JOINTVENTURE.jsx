@@ -10,8 +10,9 @@ import {
   ArrowUpRight,
   House,
   LandPlot,
-
 } from "lucide-react";
+
+const MessageIcon = Handshake;
 
 const steps = [
   {
@@ -43,10 +44,6 @@ const steps = [
     icon: Building2,
   },
 ];
-
-function MessageIcon(props) {
-  return <Handshake {...props} />;
-}
 
 const projects = [
   {
@@ -81,7 +78,7 @@ const projects = [
   },
 ];
 
-export default function Process() {
+export default function Jointventure() {
   const sectionRef = useRef(null);
 
   const isInView = useInView(sectionRef, {
@@ -95,10 +92,8 @@ export default function Process() {
       id="joint-venture"
       className="w-full overflow-hidden bg-[#fbf9f4] font-['Poppins',sans-serif] text-[#25231f]"
     >
-      {/* JOINT VENTURE PROCESS */}
+      {/* Joint Venture Process */}
       <div className="mx-auto max-w-[1500px] px-5 pb-12 pt-12 sm:px-8 sm:pb-14 sm:pt-14 lg:px-12 lg:pb-16 lg:pt-16 xl:px-16">
-
-        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -175,7 +170,7 @@ export default function Process() {
           })}
         </div>
 
-        {/* LANDOWNER ENQUIRY CTA */}
+        {/* Landowner Enquiry CTA */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -192,8 +187,8 @@ export default function Process() {
                 Own a plot of land?
               </h3>
               <p className="mt-1 max-w-[520px] text-[10px] leading-5 text-[#746d62] sm:text-[11px]">
-                Let’s discuss whether your property could be suitable for a
-                residential joint venture.
+                Let&apos;s discuss whether your property could be suitable
+                for a residential joint venture.
               </p>
             </div>
           </div>
@@ -212,14 +207,12 @@ export default function Process() {
         </motion.div>
       </div>
 
-      {/* JOINT VENTURE SERVICES */}
+      {/* Joint Venture Services */}
       <div
         id="portfolio"
         className="scroll-mt-24 border-t border-[#e9e1d4] bg-[#fffdf9]"
       >
         <div className="mx-auto max-w-[1500px] px-5 pb-14 pt-9 sm:px-8 sm:pb-16 sm:pt-11 lg:px-12 xl:px-16">
-
-          {/* Heading Row */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
