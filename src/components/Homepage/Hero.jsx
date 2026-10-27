@@ -438,7 +438,7 @@ export default function Hero() {
           }
         }
 
-        #home, #about, #services, #projects, #why-us, #contact {
+        /home, /about, /services, /projects, /why-us, /contact {
           scroll-margin-top: 20px;
         }
 
