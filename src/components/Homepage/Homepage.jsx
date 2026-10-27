@@ -3,7 +3,7 @@ import React from "react";
 
 import HERO from "../Homepage/Hero";
 import RESIDENTIALCONSTRUCTION from "./RESIDENTIALCONSTRUCTION";
-import ABOUT from "./ABOUT";
+import About from "./ABOUT";
 import INTERIORDESIGN from "./INTERIORDESIGN ";
 import JOINTVENTURE from "./JOINTVENTURE";
 import BLOG1 from "./BLOG1";
@@ -24,7 +24,7 @@ export default function Home() {
       {/* <Infinityscroll /> */}
 
       {/* About */}
-      <ABOUT />
+      <About />
 
       {/* Residential construction */}
       <RESIDENTIALCONSTRUCTION />
