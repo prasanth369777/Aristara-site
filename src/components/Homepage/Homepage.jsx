@@ -3,7 +3,7 @@ import React from "react";
 
 import HERO from "../Homepage/Hero";
 import RESIDENTIALCONSTRUCTION from "./RESIDENTIALCONSTRUCTION";
-import About from "./ABOUT";
+import About from "./Aboutus";
 import INTERIORDESIGN from "./INTERIORDESIGN ";
 import JOINTVENTURE from "./JOINTVENTURE";
 import BLOG1 from "./BLOG1";
