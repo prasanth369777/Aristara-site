@@ -2,14 +2,14 @@
 import React from "react";
 
 import HERO from "../Homepage/Hero";
-import RESIDENTIALCONSTRUCTION from "./RESIDENTIALCONSTRUCTION";
+import Residentialconstruction from "./Rc";
 import About from "./Aboutus";
-import INTERIORDESIGN from "./INTERIORDESIGN ";
-import JOINTVENTURE from "./JOINTVENTURE";
-import BLOG1 from "./BLOG1";
-import PROJECTS from "../Homepage/PROJECTS";
-import OURPROCESS from "./OURPROCESS ";
-import CONTACTUS from "../Homepage/Contact";
+import Interiordesign from "./Interiordesign";
+import Jointventure from "./Jointventure";
+import Blog1 from "./Blog1";
+import Projects from "./Projects";
+import Ourprocess from "./Ourprocess";
+import Contactus from "../Homepage/Contact";
 
 // Uncomment if you want to display the services marquee
 // import Infinityscroll from "../Homepage/infinityscrolling";
@@ -27,25 +27,25 @@ export default function Home() {
       <About />
 
       {/* Residential construction */}
-      <RESIDENTIALCONSTRUCTION />
+      <Residentialconstruction />
 
       {/* Interior design */}
-      <INTERIORDESIGN />
+      <Interiordesign />
 
       {/* Joint venture */}
-      <JOINTVENTURE />
+      <Jointventure />
 
       {/* Projects */}
-      <PROJECTS />
+      <Projects />
 
       {/* Our process */}
-      <OURPROCESS />
+      <Ourprocess />
 
       {/* Blog */}
-      <BLOG1 />
+      <Blog1 />
 
       {/* Contact */}
-      <CONTACTUS />
+      <Contactus />
     </main>
   );
 }
